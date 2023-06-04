@@ -5,6 +5,7 @@
 package demo;
 
 import java.util.ArrayList;
+import java.sql.Connection;
 
 /**
  *
@@ -12,10 +13,13 @@ import java.util.ArrayList;
  */
 public class SinhVienDAO {
     private ArrayList<SinhVien> danhSachSV;
+    private Connection conn;
 
     public SinhVienDAO()
     {
         this.danhSachSV = new ArrayList<>();
+        this.conn = JdbcUtil.getConnection();
+        System.out.println("Kết nối thành công");
     }
     
     public ArrayList<SinhVien> findAll()
