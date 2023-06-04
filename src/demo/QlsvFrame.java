@@ -13,14 +13,11 @@ import javax.swing.table.DefaultTableModel;
  */
 public class QlsvFrame extends javax.swing.JFrame {
     private SinhVienDAO svDao;
-    private static int identity = 3;
 
     public QlsvFrame() {
         initComponents();
         
         this.svDao = new SinhVienDAO();
-        this.svDao.insert(new SinhVien(1, "PH1", "Ng Van A", "anvph1@fpt.edu.vn", "HN", "nam"));
-        this.svDao.insert(new SinhVien(2, "PH2", "Trinh Thi B", "bttph2@fpt.edu.vn", "ND", "nu"));
         this.loadTable();
     }
 
@@ -285,10 +282,7 @@ public class QlsvFrame extends javax.swing.JFrame {
     }
     
     private void btnThemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThemActionPerformed
-        int id = QlsvFrame.identity++;
-        SinhVien sv = this.getFormData();
-        sv.setId(id);
-        
+        SinhVien sv = this.getFormData();        
         this.svDao.insert(sv);
         this.loadTable();
     }//GEN-LAST:event_btnThemActionPerformed
