@@ -2,13 +2,11 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package demo;
+package sof203;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
@@ -19,7 +17,7 @@ public class JdbcUtil {
     
     public static Connection getConnection()
     {
-        String dbUrl = "jdbc:sqlserver://localhost:1433;databaseName=quan_ly_sinh_vien",
+        String dbUrl = "jdbc:sqlserver://localhost:1433;databaseName=quan_ly_sinh_vien;encrypt=true;trustServerCertificate=true;",
             dbUser="sa", dbPass = "Aa@123456";
         
         if (JdbcUtil.conn == null) {
